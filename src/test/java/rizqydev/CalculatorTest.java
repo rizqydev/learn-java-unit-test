@@ -3,7 +3,7 @@ package rizqydev;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
 
@@ -39,5 +39,11 @@ public class CalculatorTest {
   // @DisplayName("Test division by zero should throw IllegalArgumentException")
   public void testDivideByZero() {
     assertThrows(IllegalArgumentException.class, () -> calculator.divide(10, 0));
+  }
+
+  @Test
+  @Disabled
+  public void testComingSoon() {
+    // This test is coming soon
   }
 }
