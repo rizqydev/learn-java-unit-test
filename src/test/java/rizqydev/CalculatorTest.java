@@ -13,8 +13,7 @@ import static org.junit.jupiter.api.Assumptions.*;
 
 @DisplayNameGeneration(SimpleDisplayNameGenerator.class)
 public class CalculatorTest {
-
-  private final Calculator calculator = new Calculator();
+ private final Calculator calculator = new Calculator();
 
   @BeforeAll
   public static void beforeALl() {
@@ -82,4 +81,6 @@ public class CalculatorTest {
     // assumeTrue same as throw new AbortedException
     assumeTrue("DEV".equals(System.getenv("PROFILE")));
   }
+
+
 }
