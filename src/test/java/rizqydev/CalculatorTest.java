@@ -9,6 +9,8 @@ import org.opentest4j.TestAbortedException;
 import rizqydev.test.Calculator;
 import rizqydev.test.generator.SimpleDisplayNameGenerator;
 
+import static org.junit.jupiter.api.Assumptions.*;
+
 @DisplayNameGeneration(SimpleDisplayNameGenerator.class)
 public class CalculatorTest {
 
@@ -73,5 +75,11 @@ public class CalculatorTest {
     if (!"DEV".equals(profile)) {
       throw new TestAbortedException("test is aborted because it is not dev");
     }
+  }
+
+  @Test
+  public void testAssumpition() {
+    // assumeTrue same as throw new AbortedException
+    assumeTrue("DEV".equals(System.getenv("PROFILE")));
   }
 }
