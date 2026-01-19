@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.*;
 
+import org.opentest4j.TestAbortedException;
 import rizqydev.test.Calculator;
 import rizqydev.test.generator.SimpleDisplayNameGenerator;
 
@@ -63,5 +64,14 @@ public class CalculatorTest {
   @Disabled
   public void testComingSoon() {
     // This test is coming soon
+  }
+
+  @Test
+  public void testAborted() {
+    var profile = System.getenv("PROFILE");
+
+    if (!"DEV".equals(profile)) {
+      throw new TestAbortedException("test is aborted because it is not dev");
+    }
   }
 }
