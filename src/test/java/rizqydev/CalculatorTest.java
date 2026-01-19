@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assumptions.*;
 @DisplayNameGeneration(SimpleDisplayNameGenerator.class)
 public class CalculatorTest {
 
-  private Calculator calculator = new Calculator();
+  private final Calculator calculator = new Calculator();
 
   @BeforeAll
   public static void beforeALl() {
