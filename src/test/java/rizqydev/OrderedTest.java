@@ -1,26 +1,41 @@
 package rizqydev;
 
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class OrderedTest {
+    private int counter = 0;
+
     @Test
     @Order(1)
     void test3() {
+        counter++;
+
+        System.out.println("counter = " + counter);
     }
 
     @Test
     @Order(2)
-    void test2() {}
+    void test2() {
+        counter++;
+
+        System.out.println("counter = " + counter);
+    }
 
     @Test
     @Order(3)
-    void test1() {}
+    void test1() {
+        counter++;
+
+        System.out.println("counter = " + counter);
+    }
 
     @Test
     @Order(4)
-    void test5() {}
+    void test5() {
+        counter++;
+
+        System.out.println("counter = " + counter);
+    }
 }
