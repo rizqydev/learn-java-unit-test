@@ -36,7 +36,7 @@ public class CalculatorTest {
   } 
 
   @Test
-  // @DisplayName("Test addition of two integers")
+  @DisplayName("Test addition of two integers")
   public void testAdd() {
     Integer result = calculator.add(2, 3);
     // assert result.equals(5) : "Expected 5 but got " + result;

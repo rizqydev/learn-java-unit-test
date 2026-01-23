@@ -2,10 +2,20 @@ package rizqydev;
 
 import org.junit.jupiter.api.*;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@TestInstance(TestInstance.Lifecycle.PER_METHOD)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class OrderedTest {
     private int counter = 0;
+
+    @BeforeAll
+    static void beforeAll() {
+        System.out.println("Before All");
+    }
+
+    @AfterAll
+    static void afterAll() {
+        System.out.println("After All");
+    }
 
     @Test
     @Order(1)
