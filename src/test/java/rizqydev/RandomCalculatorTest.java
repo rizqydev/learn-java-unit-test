@@ -9,13 +9,7 @@ import rizqydev.test.Calculator;
 
 import java.util.Random;
 
-@Extensions({
-        @ExtendWith(RandomParameterResolver.class)
-})
-public class RandomCalculatorTest {
-
-    private final Calculator calculator = new Calculator();
-
+public class RandomCalculatorTest extends AbstractRandomCalculatorTest {
     @Test
     void testRandom(Random random) {
         var a = random.nextInt();
