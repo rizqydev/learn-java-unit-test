@@ -1,7 +1,6 @@
 package rizqydev;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.util.Random;
 
@@ -23,6 +22,21 @@ public class RandomCalculatorTest extends AbstractRandomCalculatorTest {
         var b = random.nextInt();
         var result = calculator.divide(a, b);
         var expected = a / b;
+
+        Assertions.assertEquals(result, expected);
+    }
+
+    @RepeatedTest(value = 10
+            , name = "{displayName}"
+    )
+    void testRandomRepeat(Random random, TestInfo testInfo, RepetitionInfo repetitionInfo) {
+        System.out.println(testInfo.getDisplayName() + " of " + repetitionInfo.getCurrentRepetition() + " from " + repetitionInfo.getTotalRepetitions());
+        var a = random.nextInt();
+        var b = random.nextInt();
+        var result = calculator.divide(a, b);
+        var expected = a / b;
+
+        System.out.println("result " + result);
 
         Assertions.assertEquals(result, expected);
     }
